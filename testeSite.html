@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style type="text/css">
 	form{
-
+		background-color: lightgreen;
+		border-radius: 4px;
+		height: 250px;
+		width: 300px;
 	}
 	input[type=text]{
 		background-color: lightgray;
-		width: 60px;
-		height: 40px;
+		position: relative;
+		top: 25px;
+		left: 90px;
+		width: 100px;
+		height: 30px;
+		transition-duration: 0.4s;
 
+	}
+	input[type=text]:focus{
+		background-color: white;
+		border: 3px solid #555;
+	}
+	input[type=text]:hover{
+		color: white;
+    }
+	input[type=button]{
+		position: relative;
+		top: 20px;
+		left: 80px;
 	}
 	</style>
 	<title>Cálculo da média</title>
@@ -18,10 +39,11 @@
 <body>
 	<div class="notas">
 	 <form name='form'>
-	 	Digite a nota 1: <input type="text" name="nota1"><br>
-		Digite a nota 2: <input type="text" name="nota2"><br>
-		Digite a nota 3: <input type="text" name="nota3"><br>
-		<input type="button" onclick="media()" value="Calcular média">
+	 	<input type="text" name="nota1" placeholder="nota 1"><br>
+		<input type="text" name="nota2" placeholder="nota 2"><br>
+		<input type="text" name="nota3" placeholder="nota 3"><br>
+		<br>
+		<input type="button" class="btn btn-success" onclick="media()" value="Calcular média">
 	 </form>
 
 	 <script type="text/javascript">
