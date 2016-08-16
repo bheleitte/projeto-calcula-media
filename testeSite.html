@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	form{
+
+	}
+	input[type=text]{
+		background-color: lightgray;
+		width: 60px;
+		height: 40px;
+
+	}
+	</style>
+	<title>Cálculo da média</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8 " />
+</head>
+<body>
+	<div class="notas">
+	 <form name='form'>
+	 	Digite a nota 1: <input type="text" name="nota1"><br>
+		Digite a nota 2: <input type="text" name="nota2"><br>
+		Digite a nota 3: <input type="text" name="nota3"><br>
+		<input type="button" onclick="media()" value="Calcular média">
+	 </form>
+
+	 <script type="text/javascript">
+		function media(){
+			var nota1 = parseFloat(form.nota1.value.replace(',',','));
+			var nota2 = parseFloat(form.nota2.value.replace(',',','));
+			var nota3 = parseFloat(form.nota3.value.replace(',',','));
+
+			var media = (nota1+nota2+nota3)/3;
+
+			if (media<4){
+				alert('Aluno reprovado. Média: '+media)
+			}else if (media>=4 && media<7){
+				var falta = (50-6*media)/4;
+				alert('Prova final: Média'+media+'\n Nota necessária na final: '+falta);
+			}else{
+				alert('!!!! Passou Mizerávi !!!!')
+			}
+		}
+
+	 </script>
+	</div> 
+</body>
+</html>
